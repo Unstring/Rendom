@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="main-container">
+      <!--  Header Added With SearchBox And Add Icon Start -->
+      <div class="header-container">
+        <div class="searchBox_and_addBox_container">
+          <!-- Search Box Container Start -->
+          <div class="searchBox">
+            <div class="searchIcon">
+              <span class="material-icons-outlined"> search </span>
+            </div>
+            <div class="inputBox">
+              <input type="text" id="searchBar" placeholder="Search" />
+            </div>
+            <div class="cancelBox">
+              <span class="material-icons-outlined"> close </span>
+            </div>
+          </div>
+          <!-- Search Box Container End -->
+          <button id="createBtn">
+            <span class="material-icons-outlined"> add </span>
+          </button>
+        </div>
+      </div>
+      <!--  Header Added With SearchBox And Add Icon End -->
+
+      <div class="content-container">
+        <div class="path-container">
+          <!-- Each BreadCrumb Will Be Created Over Here Start  -->
+          <div class="rootBox-contianer">
+            <div class="rootBox" id="root">My Drive</div>
+            <span class="material-icons-outlined"> chevron_right </span>
+          </div>
+        </div>
+        <div class="folder-container">
+          <div class="folder-navigation">Folder</div>
+          <div class="inner-folder-container">
+            <!-- Folder_Box Will Be created over here  -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc Modal Start -->
+    <div id="docModal">
+      <div class="docModal-header-bar">
+        <div class="docModal-headerBar-left">
+          <div class="docIcon">
+            <span class="material-icons googleDocsIcon"> description </span>
+          </div>
+          <div class="docTextIcon">Notepad</div>
+        </div>
+        <div class="docModal-headerBar-right">
+          <!-- <div class="headerBar-right-iconDivBox minimize">
+            <span class="material-icons-outlined"> remove </span>
+          </div> -->
+          <div class="headerBar-right-iconDivBox fullscreen">
+            <span class="material-icons-outlined"> fullscreen </span>
+          </div>
+          <div class="headerBar-right-iconDivBox close">
+            <span class="material-icons-outlined cancel"> close </span>
+          </div>
+        </div>
+      </div>
+      <div class="docModal-header">
+        <div class="headerIconDoc">
+          <span class="material-icons"> description </span>
+        </div>
+        <div class="header_folderName_fileMenu_container">
+          <div class="header_folderName_startBox_container">
+            <input class="header_folderName" placeholder="Untitled file" >
+            <div class="header_star">
+              <span class="material-icons-outlined"> grade </span>
+            </div>
+          </div>
+          <div class="header_FileMenu_container">
+            <div class="fileMenuBox fileBox">File</div>
+            <div class="doc-saveButton">Save</div>
+            <div class="fileMenuBox">Edit</div>
+            <div class="fileMenuBox">View</div>
+            <div class="fileMenuBox">help</div>
+          </div>
+        </div>
+        <div class="comment_share_account_boxContianer">
+          <div class="commentBox">
+            <span class="material-icons-outlined"> chat </span>
+          </div>
+          <div class="shareContainer">
+            <div class="shareLogo">
+              <span class="material-icons-outlined"> lock </span>
+            </div>
+            <div class="sharetext">Share</div>
+          </div>
+        </div>
+      </div>
+      <div class="docModalEditOption">
+        <div class="fontSelectOption">
+          <select name="Font" id="fontOption">
+            <option value="sans-serif">sans-serif</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+          </select>
+        </div>
+        <div class="fontSizeContainer">
+          <div class="inner-fontSizeContainer">
+            <div class="subSize">
+              <span class="material-icons-outlined"> remove </span>
+            </div>
+            <div class="textSizeValue">18</div>
+            <div class="addSize">
+              <span class="material-icons-outlined"> add </span>
+            </div>
+          </div>
+        </div>
+        <div class="docStyleContainer">
+          <div class="inner-docStyleContainer">
+            <div class="docStyleBox docBold">
+              <span class="material-icons-outlined"> format_bold </span>
+            </div>
+            <div class="docStyleBox docItalic" >
+              <span class="material-icons-outlined"> format_italic </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="docContentArea">
+        <textarea id="notepadTextArea"></textarea>
+      </div>
+    </div>
+
+    <!-- Doc Modal End -->
+
+    <!-- FileOption Menu Start -->
+    <div class="menu-FileOption">
+      <div class="menu-single-box menu-createFolderBtn">
+        <div class="menuIcon">
+          <span class="material-icons-outlined"> create_new_folder </span>
+        </div>
+        <div class="menuFile-Name">Folder</div>
+      </div>
+      <div class="multiple-single-box">
+        <div class="menu-multiple-box">
+          <div class="menuIcon">
+            <span class="material-icons googleDocsIcon"> description </span>
+          </div>
+          <div class="menuFile-Name">Google Docs</div>
+        </div>
+        <div class="menu-multiple-box">
+          <div class="menuIcon">
+            <span class="material-icons sheetIcon"> note_add </span>
+          </div>
+          <div class="menuFile-Name">Google Sheet</div>
+        </div>
+      </div>
+    </div>
+    <!-- FileOption Menu End -->
+
+    <!-- BreadCrumb Template Start -->
+    <template id="temp-breadCrumb">
+      <div class="rootBox-contianer">
+        <div class="rootBox" id="root">My drive</div>
+        <span class="material-icons-outlined"> chevron_right </span>
+      </div>
+    </template>
+    <!-- BreadCrumb Template Start -->
+
+    <!-- createFolderBox Template Start -->
+    <template id="temp-createFolderBox">
+      <div class="folderBox">
+        <div class="editBox">
+          <div>
+            <span class="material-icons-outlined editIcon" id="${e.id}">
+              edit
+            </span>
+          </div>
+          <div>
+            <span class="material-icons-outlined deleteIcon" id="${e.id}">
+              close
+            </span>
+          </div>
+        </div>
+        <div class="folderIcon">
+          <span class="material-icons"> folder </span>
+        </div>
+        <div class="folderName">Untitled</div>
+      </div>
+    </template>
+    <!-- createFolderBox Template -->
+
+    <!-- createNotepadBox template-->
+    <!-- <template id="temp-createNotepadBox">
+      <div class="folderBox">
+        <div class="editBox">
+          <div>
+            <span class="material-icons-outlined editIcon" id="${e.id}">
+              edit
+            </span>
+          </div>
+          <div>
+            <span class="material-icons-outlined deleteIcon" id="${e.id}">
+              close
+            </span>
+          </div>
+        </div>
+        <div class="folderIcon">
+          <span class="material-icons"> description </span>
+        </div>
+        <div class="folderName">Untitled file</div>
+      </div>
+    </template> -->
+    <!-- createNotepadBox template -->
+
+
+    <!-- AddFolder Modal start-->
+    <div class="modal" id="addFolderModal">
+      <div class="innerModal">
+        <div class="nameText">Add Folder</div>
+        <div class="modal-inputBox">
+          <input
+            id="createFolderInput"
+            type="text"
+            placeholder="Add Folder Name"
+            onfocus="this.select()"
+          />
+        </div>
+        <div class="cancel_confirm-box">
+          <div class="cancel-btn" id="canceladdFolderModal">Cancel</div>
+          <div class="confirm-btn" id="createFolderBtn">OK</div>
+        </div>
+      </div>
+    </div>
+    <!-- AddFolder Modal End-->
+
+    <!-- Rename Modal Start-->
+    <div class="modal" id="editFolderModal">
+      <div class="innerModal">
+        <div class="nameText">Rename Folder</div>
+        <div class="modal-inputBox">
+          <input
+            id="renameFolderInput"
+            type="text"
+            placeholder="Rename Folder "
+            onfocus="this.select()"
+          />
+        </div>
+        <div class="cancel_confirm-box">
+          <div class="cancel-btn" id="cancelEditFolderModal">Cancel</div>
+          <div class="confirm-btn" id="editFolderBtn">OK</div>
+        </div>
+      </div>
+    </div>
+    <!-- Rename Modal End-->
+
+    <!-- DeleteFolderModal Start -->
+    <div class="modal" id="deleteFolderModal">
+      <div class="innerModal">
+        <div class="nameText">Delete Folder</div>
+        <div class="modal-inputBox">This folder will be deleted. Confirm?</div>
+        <div class="cancel_confirm-box">
+          <div class="cancel-btn" id="cancelDeleteFolderModal">Cancel</div>
+          <div class="confirm-btn" id="deleteFolderBtn">OK</div>
+        </div>
+      </div>
+    </div>
+    <!-- DeleteFolderModal End -->
+
+    <!-- Create Unique ID Start -->
+    <script src="https://cdn.jsdelivr.net/npm/short-unique-id@latest/dist/short-unique-id.min.js"></script>
+    <script>
+      let uid = new ShortUniqueId();
+    </script>
+    <!-- Create Unique ID End -->
+
+    <!-- Our JS File Start -->
+    <script src="./database.js"></script>
+    <script src="./script.js"></script>
+    <script src="./notepad.js"></script>
+    <!-- Our JS File End -->
+  </body>
+</html>
