@@ -18,7 +18,7 @@ body{
     margin-top: 2rem;
     height: 2.5rem;
     width: 20rem;
-    background-color: FF0000;
+    background-color: 396EB0;
     border-radius: 0.3rem;
 }
 
@@ -32,6 +32,9 @@ body{
 #searchBtn{
     width: 2.4rem;
     height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #191919;
     border-radius: 0.3rem;
 }
@@ -39,8 +42,12 @@ body{
 #addFile{
     width: 2.4rem;
     height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #191919;
     border-radius: 0.3rem;
+
 }
 
 #breadCrumbs{
@@ -49,7 +56,7 @@ body{
     justify-content: center;
     width: 95vw;
     height: 1.5rem;
-    background-color: FF0000;
+    background-color: 396EB0;
     border-radius: 0.3rem;
     margin-top: 1rem;
 }
@@ -57,7 +64,7 @@ body{
 #bctxt{
     width: calc(95vw - 0.1rem);
     height: 1.4rem;
-    background-color: #414141;
+    background-color: #303030;
     border-radius: 0.3rem;
 }
 
@@ -67,7 +74,7 @@ body{
     align-items: center;
     width: 99vw;
     height: calc(92vh - 1.5rem - 2.5rem);
-    background-color: FF0000;
+    background-color: 396EB0;
     border-radius: 0.3rem;  
     margin-top: 0.5rem;  
 }
@@ -78,3 +85,14 @@ body{
     background-color: #212121;
     border-radius: 0.3rem;  
 }
+
+.fas{
+    color: 396EB0;
+}
+
+.tempFolder{
+    background-color: red;
+    margin: 1rem;
+
+}
+
